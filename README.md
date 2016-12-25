@@ -6,7 +6,7 @@ Installs and configures Java (JDK or JRE).
 
 The role supports 14.04 for the moment. At this time of writing, JDK 1.8 is not
 in the official apt repository. The role adds a ppa repository and installs
-`oracle-java8-installer`, i.e. no JDK support.
+`oracle-java8-installer`, i.e. no JRE support.
 
 # Requirements
 
