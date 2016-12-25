@@ -6,6 +6,8 @@ packages = []
 case os["family"]
 when "freebsd"
   packages = [ "java/openjdk7", "java/openjdk8-jre" ]
+when "centos"
+  packages = [ "java-1.7.0-openjdk" ]
 end
 
 packages.each do |package|

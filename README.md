@@ -19,6 +19,11 @@ None
 |----------|---------|
 | `__java_packages` | `["java/openjdk8"]` |
 
+## RedHat
+
+| Variable | Default |
+|----------|---------|
+| `__java_packages` | `["java-1.8.0-openjdk"]` |
 
 # Dependencies
 
