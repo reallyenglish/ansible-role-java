@@ -62,3 +62,12 @@ suites:
     verifier:
       name: shell
       command: rspec -c -f d -I tests/serverspec tests/serverspec/default_spec.rb
+
+  - name: ubuntu_with_jdk7_only
+    provisioner:
+      name: ansible_playbook
+      playbook: tests/serverspec/ubuntu_with_jdk7_only.yml
+    verifier:
+      name: shell
+      command: rspec -c -f d -I tests/serverspec tests/serverspec/ubuntu_with_jdk7_only_spec.rb
+    includes: ubuntu-14.04-amd64
