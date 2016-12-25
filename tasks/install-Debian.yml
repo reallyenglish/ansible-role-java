@@ -1,0 +1,16 @@
+---
+
+- name: See if the license is accepted
+  shell: debconf-show oracle-java8-installer
+  changed_when: false
+  register: register_debconf_show
+
+- name: Set accepted-oracle-license-v1-1 to true
+  shell: echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
+  when: "not '* shared/accepted-oracle-license-v1-1: true' in register_debconf_show.stdout_lines"
+
+- name: Install Java
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ java_packages }}"

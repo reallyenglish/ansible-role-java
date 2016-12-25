@@ -3,13 +3,15 @@ require 'serverspec'
 
 packages = []
 
-case os["family"]
+case os[:family]
 when "freebsd"
   packages = [ "java/openjdk7", "java/openjdk8-jre" ]
 when "centos"
   packages = [ "java-1.7.0-openjdk" ]
 when "openbsd"
   packages = [ "jdk-1.7.0.80p1v0" ]
+when "ubuntu"
+  packages = [ "oracle-java8-installer" ]
 end
 
 packages.each do |package|
