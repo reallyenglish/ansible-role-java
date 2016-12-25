@@ -1,6 +1,6 @@
 # ansible-role-java
 
-Installs and configures Java
+Installs and configures Java (JDK or JRE).
 
 # Requirements
 
@@ -10,7 +10,7 @@ None
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `java_packages` | | `{{ __java_packages }}` |
+| `java_packages` | list of Java package name to install | `{{ __java_packages }}` |
 
 
 ## FreeBSD
