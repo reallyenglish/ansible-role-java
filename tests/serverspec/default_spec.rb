@@ -11,7 +11,7 @@ when "centos"
 when "openbsd"
   packages = [ "jdk-1.7.0.80p1v0" ]
 when "ubuntu"
-  packages = [ "oracle-java8-installer" ]
+  packages = [ "oracle-java8-installer", "openjdk-7-jdk" ]
 end
 
 packages.each do |package|

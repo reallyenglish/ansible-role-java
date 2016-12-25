@@ -2,6 +2,6 @@
   roles:
     - ansible-role-java
   vars:
-    java_packages: "{% if ansible_os_family == 'FreeBSD' %}[ 'java/openjdk7', 'java/openjdk8-jre' ]{% elif ansible_os_family == 'RedHat' %}[ 'java-1.7.0-openjdk' ]{% elif ansible_os_family == 'OpenBSD' %}[ 'jdk-1.7.0.80p1v0' ]{% elif ansible_os_family == 'Debian' %}[ 'oracle-java8-installer' ]{% endif %}"
+    java_packages: "{% if ansible_os_family == 'FreeBSD' %}[ 'java/openjdk7', 'java/openjdk8-jre' ]{% elif ansible_os_family == 'RedHat' %}[ 'java-1.7.0-openjdk' ]{% elif ansible_os_family == 'OpenBSD' %}[ 'jdk-1.7.0.80p1v0' ]{% elif ansible_os_family == 'Debian' %}[ 'oracle-java8-installer', 'openjdk-7-jdk' ]{% endif %}"
     apt_repo_to_add:
       - ppa:webupd8team/java
