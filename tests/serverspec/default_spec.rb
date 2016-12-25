@@ -8,6 +8,8 @@ when "freebsd"
   packages = [ "java/openjdk7", "java/openjdk8-jre" ]
 when "centos"
   packages = [ "java-1.7.0-openjdk" ]
+when "openbsd"
+  packages = [ "jdk-1.7.0.80p1v0" ]
 end
 
 packages.each do |package|
