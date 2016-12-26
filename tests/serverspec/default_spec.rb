@@ -22,12 +22,16 @@ end
 
 case os[:family]
 when "freebsd"
-  describe "/proc" do
-    it { should be_mounted.with(:type => "procfs") }
+  describe file("/proc") do
+    # XXX https://github.com/reallyenglish/ansible-role-logstash/issues/7
+    # it { should be_mounted.with(:type => "procfs") }
+    it { should be_mounted }
   end
 
-  describe "/dev/fd" do
-    it { shoulld be_mounted.with(:type => "fdescfs") }
+  describe file("/dev/fd") do
+    # XXX https://github.com/reallyenglish/ansible-role-logstash/issues/7
+    # it { should be_mounted.with(:type => "fdescfs") }
+    it { should be_mounted }
   end
 when "ubuntu"
   describe command("debconf-show oracle-java8-installer") do
