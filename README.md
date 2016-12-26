@@ -18,12 +18,23 @@ None
 |----------|-------------|---------|
 | `java_packages` | list of Java package name to install | `{{ __java_packages }}` |
 
+## Debian
+
+| Variable | Default |
+|----------|---------|
+| `__java_packages` | `["oracle-java8-installer"]` |
 
 ## FreeBSD
 
 | Variable | Default |
 |----------|---------|
 | `__java_packages` | `["java/openjdk8"]` |
+
+## OpenBSD
+
+| Variable | Default |
+|----------|---------|
+| `__java_packages` | `["jdk-1.8.0.72p0v0"]` |
 
 ## RedHat
 
