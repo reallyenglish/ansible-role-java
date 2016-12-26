@@ -18,12 +18,6 @@ None
 |----------|-------------|---------|
 | `java_packages` | list of Java package name to install | `{{ __java_packages }}` |
 
-## Debian
-
-| Variable | Default |
-|----------|---------|
-| `__java_packages` | `["oracle-java8-installer"]` |
-
 ## FreeBSD
 
 | Variable | Default |
@@ -41,6 +35,18 @@ None
 | Variable | Default |
 |----------|---------|
 | `__java_packages` | `["java-1.8.0-openjdk"]` |
+
+## Ubuntu-14.04
+
+| Variable | Default |
+|----------|---------|
+| `__java_packages` | `["oracle-java8-installer"]` |
+
+## Ubuntu-16.04
+
+| Variable | Default |
+|----------|---------|
+| `__java_packages` | `["openjdk-8-jdk"]` |
 
 # Dependencies
 
