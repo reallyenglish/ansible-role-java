@@ -20,7 +20,7 @@ packages.each do |package|
   end
 end
 
-case os["family"]
+case os[:family]
 when "freebsd"
   describe "/proc" do
     it { should be_mounted.with(:type => "procfs") }
