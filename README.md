@@ -2,11 +2,11 @@
 
 Installs and configures Java (JDK or JRE).
 
-## Notes for Ubuntu
+## Notes for Ubuntu 14.04
 
-The role supports 14.04 for the moment. At this time of writing, JDK 1.8 is not
-in the official apt repository. The role adds a ppa repository and installs
-`oracle-java8-installer`, i.e. no JRE support.
+At this time of writing, JDK 1.8 is not in the official apt repository. The
+role adds a ppa repository and installs `oracle-java8-installer`, i.e. no JRE
+support.
 
 # Requirements
 
