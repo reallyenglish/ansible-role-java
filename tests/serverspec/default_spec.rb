@@ -29,4 +29,10 @@ when "freebsd"
   describe "/dev/fd" do
     it { shoulld be_mounted.with(:type => "fdescfs") }
   end
+when "ubuntu"
+  describe command("debconf-show oracle-java8-installer") do
+    its(:stdout) { should match(/#{ Regexp.escape("* shared/accepted-oracle-license-v1-1: true") }/) }
+    its(:stderr) { should match(/^$/) }
+    its(:exit_status) { should eq 0 }
+  end
 end
