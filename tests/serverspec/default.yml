@@ -12,7 +12,10 @@
       command: pkill --full /usr/bin/unattended-upgrade
       become: true
       register: kill_result
-      failed_when: kill_result.rc != 0
+      # rc == 0 means "One or more processes matched the criteria", i.e. the
+      # process has been killed
+      # rc == 1 means "No processes matched", i.e. the process is not running
+      failed_when: kill_result.rc >= 2
       changed_when: false
       when:
         - ansible_distribution == 'Ubuntu'
