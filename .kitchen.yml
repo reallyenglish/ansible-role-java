@@ -57,7 +57,7 @@ platforms:
 
   - name: debian-8.6-amd64
     driver:
-      box: trombik/test-debian-8.6-amd64
+      box: trombik/ansible-debian-8.6-amd64
       box_check_update: false
 
   - name: centos-7.2-x86_64
