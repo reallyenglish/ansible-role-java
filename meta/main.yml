@@ -16,6 +16,9 @@ galaxy_info:
     versions:
     - trusty
     - xenial
+  - name: Debian
+    versions:
+    - jessie
   - name: EL
     versions:
     - 7
@@ -23,4 +26,5 @@ galaxy_info:
   galaxy_tags:
     - java
 dependencies:
-  - { role: reallyenglish.apt-repo, when: ansible_os_family == 'Debian' }
+  - role: reallyenglish.apt-repo
+    when: ansible_os_family == 'Debian'

@@ -59,9 +59,8 @@ None
   roles:
     - ansible-role-java
   vars:
-    java_packages: "{% if ansible_os_family == 'FreeBSD' %}[ 'java/openjdk7', 'java/openjdk8-jre' ]{% elif ansible_os_family == 'RedHat' %}[ 'java-1.7.0-openjdk' ]{% elif ansible_os_family == 'OpenBSD' %}[ 'jdk-1.7.0.80p1v0' ]{% elif ansible_os_family == 'Debian' %}[ 'oracle-java8-installer', 'openjdk-7-jdk' ]{% endif %}"
-    apt_repo_to_add:
-      - ppa:webupd8team/java
+    java_packages: "{% if ansible_os_family == 'FreeBSD' %}[ 'java/openjdk7', 'java/openjdk8-jre' ]{% elif ansible_os_family == 'RedHat' %}[ 'java-1.7.0-openjdk' ]{% elif ansible_os_family == 'OpenBSD' %}[ 'jdk-1.7.0.80p1v0' ]{% elif ansible_distribution == 'Ubuntu' and ansible_distribution_version | version_compare('16.04', '<') %}[ 'oracle-java8-installer', 'openjdk-7-jdk' ]{% elif ansible_distribution == 'Ubuntu' and ansible_distribution_version | version_compare('16.04', '>=') %}[ 'openjdk-8-jdk' ]{% elif ansible_distribution == 'Debian' %}[ 'openjdk-8-jdk' ]{% endif %}"
+    apt_repo_to_add: "{% if ansible_distribution == 'Ubuntu' and ansible_distribution_version | version_compare('16.04', '<') %}[ 'ppa:webupd8team/java' ]{% elif ansible_distribution == 'Debian' %}[ 'deb http://ftp.debian.org/debian jessie-backports main' ]{% else %}[]{% endif %}"
 ```
 
 # License

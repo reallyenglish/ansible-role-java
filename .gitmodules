@@ -1,3 +1,0 @@
-[submodule "extra_roles/reallyenglish.apt-repo"]
-	path = extra_roles/reallyenglish.apt-repo
-	url = https://github.com/reallyenglish/ansible-role-apt-repo.git

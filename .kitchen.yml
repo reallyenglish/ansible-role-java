@@ -15,6 +15,7 @@ provisioner:
   ansible_extra_flags: <%= ENV['ANSIBLE_EXTRA_FLAGS'] %>
   http_proxy: <%= ENV['ANSIBLE_PROXY'] %>
   idempotency_test: true
+  requirements_path: requirements.yml
   additional_copy_path:
     - extra_modules
     - filter_plugins
@@ -52,6 +53,11 @@ platforms:
   - name: ubuntu-16.04-amd64
     driver:
       box: trombik/ansible-ubuntu-16.04-amd64
+      box_check_update: false
+
+  - name: debian-8.6-amd64
+    driver:
+      box: trombik/test-debian-8.6-amd64
       box_check_update: false
 
   - name: centos-7.2-x86_64

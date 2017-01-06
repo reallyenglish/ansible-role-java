@@ -16,6 +16,8 @@ when "ubuntu"
   else
     packages = [ "openjdk-8-jdk" ]
   end
+when "debian"
+  packages = [ "openjdk-8-jdk" ]
 end
 
 packages.each do |package|
