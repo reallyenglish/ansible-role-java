@@ -18,6 +18,13 @@ None
 |----------|-------------|---------|
 | `java_packages` | list of Java package name to install | `{{ __java_packages }}` |
 
+## Debian-8.6
+
+| Variable | Default |
+|----------|---------|
+| `__java_packages` | `["openjdk-8-jdk"]` |
+
+
 ## FreeBSD
 
 | Variable | Default |
