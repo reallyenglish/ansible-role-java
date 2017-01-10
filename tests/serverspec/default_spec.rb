@@ -54,3 +54,9 @@ when "ubuntu"
     end
   end
 end
+
+describe command("jps") do
+  its(:stdout) { should match(/^\d+\s+Jps/) }
+  its(:stderr) { should match(/^$/) }
+  its(:exit_status) { should eq 0 }
+end
