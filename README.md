@@ -24,6 +24,11 @@ None
 |----------|---------|
 | `__java_packages` | `["openjdk-8-jdk"]` |
 
+## Debian-8.7
+
+| Variable | Default |
+|----------|---------|
+| `__java_packages` | `["openjdk-8-jdk"]` |
 
 ## FreeBSD
 

@@ -29,14 +29,12 @@ end
 case os[:family]
 when "freebsd"
   describe file("/proc") do
-    # XXX https://github.com/reallyenglish/ansible-role-logstash/issues/7
-    # it { should be_mounted.with(:type => "procfs") }
+    it { should be_mounted.with(:type => "procfs") }
     it { should be_mounted }
   end
 
   describe file("/dev/fd") do
-    # XXX https://github.com/reallyenglish/ansible-role-logstash/issues/7
-    # it { should be_mounted.with(:type => "fdescfs") }
+    it { should be_mounted.with(:type => "fdescfs") }
     it { should be_mounted }
   end
 when "ubuntu"
