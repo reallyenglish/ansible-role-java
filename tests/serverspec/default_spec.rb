@@ -6,7 +6,7 @@ packages = []
 case os[:family]
 when "freebsd"
   packages = ["java/openjdk7", "java/openjdk8-jre"]
-when "centos"
+when "redhat"
   packages = ["java-1.7.0-openjdk"]
 when "openbsd"
   packages = ["jdk-1.7.0.80p1v0"]
