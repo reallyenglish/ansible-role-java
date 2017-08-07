@@ -1,23 +1,23 @@
-require 'spec_helper'
-require 'serverspec'
+require "spec_helper"
+require "serverspec"
 
 packages = []
 
 case os[:family]
 when "freebsd"
-  packages = [ "java/openjdk7", "java/openjdk8-jre" ]
+  packages = ["java/openjdk7", "java/openjdk8-jre"]
 when "redhat"
-  packages = [ "java-1.7.0-openjdk" ]
+  packages = ["java-1.7.0-openjdk"]
 when "openbsd"
-  packages = [ "jdk-1.7.0.80p1v0" ]
+  packages = ["jdk-1.7.0.80p1v0"]
 when "ubuntu"
-  if os[:release].to_f < 16.04
-    packages = [ "oracle-java8-installer", "openjdk-7-jdk" ]
-  else
-    packages = [ "openjdk-8-jdk" ]
-  end
+  packages = if os[:release].to_f < 16.04
+               ["oracle-java8-installer", "openjdk-7-jdk"]
+             else
+               ["openjdk-8-jdk"]
+             end
 when "debian"
-  packages = [ "openjdk-8-jdk" ]
+  packages = ["openjdk-8-jdk"]
 end
 
 packages.each do |package|
@@ -29,12 +29,12 @@ end
 case os[:family]
 when "freebsd"
   describe file("/proc") do
-    it { should be_mounted.with(:type => "procfs") }
+    it { should be_mounted.with(type: "procfs") }
     it { should be_mounted }
   end
 
   describe file("/dev/fd") do
-    it { should be_mounted.with(:type => "fdescfs") }
+    it { should be_mounted.with(type: "fdescfs") }
     it { should be_mounted }
   end
 when "ubuntu"
