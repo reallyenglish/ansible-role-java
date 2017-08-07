@@ -13,6 +13,7 @@
   with_items: "{{ java_packages }}"
 
 - name: Workaround Debian bug 863888
+  # https://github.com/reallyenglish/ansible-role-java/issues/24
   # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863888
   apt:
     name: ca-certificates-java
