@@ -8,6 +8,12 @@ At this time of writing, JDK 1.8 is not in the official apt repository. The
 role adds a ppa repository and installs `oracle-java8-installer`, i.e. no JRE
 support.
 
+## Notes for Debian
+
+At the moment, `openjdk-8-jdk` cannot be installed due to [Debian bug
+863888](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863888).
+`jessie-backports` must be installed for the role to workaround it.
+
 # Requirements
 
 None
@@ -18,17 +24,12 @@ None
 |----------|-------------|---------|
 | `java_packages` | list of Java package name to install | `{{ __java_packages }}` |
 
-## Debian-8.6
+## Debian-8
 
 | Variable | Default |
 |----------|---------|
 | `__java_packages` | `["openjdk-8-jdk"]` |
 
-## Debian-8.7
-
-| Variable | Default |
-|----------|---------|
-| `__java_packages` | `["openjdk-8-jdk"]` |
 
 ## FreeBSD
 
@@ -46,15 +47,15 @@ None
 
 | Variable | Default |
 |----------|---------|
-| `__java_packages` | `["java-1.8.0-openjdk"]` |
+| `__java_packages` | `["java-1.8.0-openjdk", "java-1.8.0-openjdk-devel"]` |
 
-## Ubuntu-14.04
+## Ubuntu-14
 
 | Variable | Default |
 |----------|---------|
 | `__java_packages` | `["oracle-java8-installer"]` |
 
-## Ubuntu-16.04
+## Ubuntu-16
 
 | Variable | Default |
 |----------|---------|
@@ -62,7 +63,7 @@ None
 
 # Dependencies
 
-* reallyenglish.apt-repo
+None
 
 # Example Playbook
 
