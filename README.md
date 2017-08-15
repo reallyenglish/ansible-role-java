@@ -20,6 +20,9 @@ None
 
 # Role Variables
 
+Note that the digits in the sub-section names below does not represent versions
+the role supports.
+
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `java_packages` | list of Java package name to install | `{{ __java_packages }}` |
@@ -29,7 +32,6 @@ None
 | Variable | Default |
 |----------|---------|
 | `__java_packages` | `["openjdk-8-jdk"]` |
-
 
 ## FreeBSD
 
